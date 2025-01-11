@@ -10,6 +10,7 @@ export const LightingSetup = ({
   fillIntensity,
 }) => {
   // Define the light positions for each preset
+
   const lightingConfig = {
     rembrandt: {
       main: [1, 2, 1],
