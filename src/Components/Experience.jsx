@@ -56,7 +56,7 @@ export const Experience = () => {
               position={[0, 0.4, -1]}
               rotation={[0, 0, 0]}
               fontSize={0.4}
-              font="../../static/fonts/Quickless.otf"
+              font="/fonts/Quickless.otf"
             >
               {LeatherMats[snap.leatherColor]}
               <meshBasicMaterial color={"white"} />

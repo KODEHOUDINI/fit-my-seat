@@ -4,5 +4,5 @@
 
 @font-face {
   font-family: "Quickless";
-  src: url("../static/fonts/Quickless.otf") format("opentype");
+  src: url("/fonts/Quickless.otf") format("opentype");
 }
