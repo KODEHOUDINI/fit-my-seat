@@ -5,7 +5,7 @@ import { useSnapshot } from "valtio";
 import { state } from "../../store";
 
 export const OfficeChair = (props) => {
-  const { nodes, materials } = useGLTF("/OfficeChair.glb");
+  const { nodes, materials } = useGLTF("/Office Chair.glb");
   const snap = useSnapshot(state);
 
   // List of texture paths
@@ -26,7 +26,18 @@ export const OfficeChair = (props) => {
 
   const LeatherAOMap = useTexture("/textures/Leather/Constant Textures/LeatherRegion_AO.jpg");
   LeatherAOMap.flipY = false;
-  LeatherAOMap.colorSpace = "srgb";
+
+  const LeatherNormalMap = useTexture(
+    "/textures/Leather/Constant Textures/CompLeatherRegion_normal.png"
+  );
+  LeatherNormalMap.flipY = false;
+
+  const LeatherRoughnessMap = useTexture(
+    "/textures/Leather/Constant Textures/LeatherRegion_roughness.jpg"
+  );
+  LeatherRoughnessMap.flipY = false;
+
+  console.log(materials);
 
   useEffect(() => {
     if (!materials || !materials.LeatherRegion) return; // Safety check for materials and LeatherRegion
@@ -40,6 +51,9 @@ export const OfficeChair = (props) => {
     // Update the material map
     materials.LeatherRegion.map = selectedMap;
     materials.LeatherRegion.aoMap = LeatherAOMap;
+    materials.LeatherRegion.normalMap = LeatherNormalMap;
+    materials.LeatherRegion.roughnessMap = LeatherRoughnessMap;
+    materials.LeatherRegion.roughness = 1;
 
     // Mark the material as needing an update for Three.js
     materials.LeatherRegion.needsUpdate = true;
@@ -96,4 +110,4 @@ export const OfficeChair = (props) => {
   );
 };
 
-useGLTF.preload("/OfficeChair.glb");
+useGLTF.preload("/Office Chair.glb");
