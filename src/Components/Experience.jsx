@@ -32,7 +32,7 @@ export const Experience = () => {
     if (snap.modelLoadProgress === 100) {
       const timer = setTimeout(() => {
         setOfficeLoading(false);
-      }, 3000);
+      }, 1000);
 
       // Cleanup the timer on component unmount or when snap.modelLoadProgress changes
       return () => clearTimeout(timer);
