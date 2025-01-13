@@ -11,8 +11,8 @@ const MainContainer = () => {
   const gradients = [
     "from-[#254c2f] to-[#002c00]",
     "from-[#69453E] to-[#361610]",
-    "from-[#853414] to-[#3c1100]",
-    "from-[#B7A991] to-[#5d4b2b]",
+    "from-[#692910] to-[#3c1100]",
+    "from-[#877b66] to-[#5d4b2b]",
     "from-[#45464C] to-[#1C1C1F]",
   ];
   const LeatherMats = [
