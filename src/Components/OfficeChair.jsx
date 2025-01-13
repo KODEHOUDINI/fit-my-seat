@@ -37,8 +37,6 @@ export const OfficeChair = (props) => {
   );
   LeatherRoughnessMap.flipY = false;
 
-  console.log(materials);
-
   useEffect(() => {
     if (!materials || !materials.LeatherRegion) return; // Safety check for materials and LeatherRegion
 

@@ -9,10 +9,10 @@ import { useEffect, useState } from "react";
 const MainContainer = () => {
   const thumbNails = ["1", "2", "3", "4", "5"];
   const gradients = [
-    "from-green-900 to-zinc-800",
+    "from-[#254c2f] to-[#002c00]",
     "from-[#69453E] to-[#361610]",
-    "from-[#904426] to-amber-900",
-    "from-[#B7A991] to-[#88775a]",
+    "from-[#853414] to-[#3c1100]",
+    "from-[#B7A991] to-[#5d4b2b]",
     "from-[#45464C] to-[#1C1C1F]",
   ];
   const LeatherMats = [
@@ -45,7 +45,7 @@ const MainContainer = () => {
   return (
     <>
       <div
-        className={`relative overflow-hidden flex justify-between w-screen h-screen text-center p-1 bg-gradient-to-br ${
+        className={`relative overflow-hidden flex justify-between w-screen h-screen text-center p-1 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))]  ${
           gradients[snap.leatherColor]
         }`}
       >
