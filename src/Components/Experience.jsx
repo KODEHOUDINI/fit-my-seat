@@ -14,6 +14,7 @@ import OfficeChairLoading from "./OfficeChairLoading";
 
 export const Experience = () => {
   const snap = useSnapshot(state);
+
   const LeatherMats = [
     "Barcelona Olive",
     "Diesel Brown",
@@ -61,7 +62,10 @@ export const Experience = () => {
               {LeatherMats[snap.leatherColor]}
               <meshBasicMaterial color={"white"} />
             </Text>
-            <Environment preset="city" environmentIntensity={1} />
+            <Environment
+              files={["/lighting/3.webp", "/lighting/3-gainmap.webp", "/lighting/3.json"]}
+              environmentIntensity={1.5}
+            />
           </Suspense>
         </Canvas>
       )}

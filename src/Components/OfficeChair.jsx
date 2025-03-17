@@ -5,7 +5,7 @@ import { useSnapshot } from "valtio";
 import { state } from "../../store";
 
 export const OfficeChair = (props) => {
-  const { nodes, materials } = useGLTF("/Office Chair.glb");
+  const { nodes, materials } = useGLTF("/Office Chair.glb", { draco: true });
   const snap = useSnapshot(state);
 
   // List of texture paths
@@ -74,6 +74,11 @@ export const OfficeChair = (props) => {
         azimuthRotateSpeed={0.6}
       />
       <group {...props} position={[0, -0.25, 0]} ref={groupRef} dispose={null}>
+        {/* Rembrandt Lighting setup */}
+        <ambientLight intensity={0.35} />
+        <directionalLight position={[1, 2, 1]} intensity={2} castShadow />
+        <directionalLight position={[-2, -0.5, -2]} intensity={3.6} castShadow />
+
         <mesh
           castShadow
           receiveShadow
@@ -98,11 +103,6 @@ export const OfficeChair = (props) => {
           geometry={nodes.PlasticParts.geometry}
           material={materials.PlasticParts}
         />
-
-        {/* Rembrandt Lighting setup */}
-        <ambientLight intensity={0.35} />
-        <directionalLight position={[1, 2, 1]} intensity={1.5} castShadow />
-        <directionalLight position={[-2, -0.5, -2]} intensity={0.5} castShadow color="white" />
       </group>
     </>
   );
